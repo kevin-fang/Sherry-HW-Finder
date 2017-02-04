@@ -14,7 +14,7 @@ with open("hw.txt", "r") as f:
     i = 0;
 
     while (i < 50):
-        regexSearch = re.compile(r"(.+%d\/%d.+)" % (month, day + i))
+        regexSearch = re.compile(r"(.+. %d\/%d(?:.+)\n(?:\s+(?:p.+))?)" % (month, day + i))
         i += 1
         todayHW = regexSearch.search(buffer);
         try:
