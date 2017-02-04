@@ -1,3 +1,5 @@
+#!/bin/bash/env python
+
 import re, datetime
 from sys import exit
 
@@ -23,4 +25,4 @@ for work in dayWork:
             print work,
             exit(1)
 
-print("Outdated Syllabus/No HW")
+print("Incorrect Syllabus/No HW")
