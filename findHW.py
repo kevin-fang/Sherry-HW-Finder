@@ -1,4 +1,5 @@
 import re, datetime
+from sys import exit
 
 with open("hw.txt", "r") as f:
     buffer = f.read();
@@ -15,19 +16,15 @@ with open("hw.txt", "r") as f:
     #elif weekday == 6:
     #    day += 1;
 
-    regexSearch = re.compile(r"(.+%d\/%d.+)" % (month, day))
-    todayHW = regexSearch.search(buffer);
-    try:
-        print todayHW.group(1)
-    except:
-        regexSearch = re.compile(r"(.+%d\/%d.+)" % (month, day + 1))
+    i = 0;
+
+    while (i < 50):
+        regexSearch = re.compile(r"(.+%d\/%d.+)" % (month, day + i))
+        i += 1
         todayHW = regexSearch.search(buffer);
         try:
             print todayHW.group(1)
-        except:
-            regexSearch = re.compile(r"(.+%d\/%d.+)" % (month, day + 2))
-            todayHW = regexSearch.search(buffer);
-            try:
-                print todayHW.group(1)
-            except:
-                print("Cannot find!\n");
+            exit(0)
+        except AttributeError:
+            pass
+print("Outdated Syllabus/No HW!")
