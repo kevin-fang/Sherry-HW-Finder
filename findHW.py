@@ -8,11 +8,8 @@ with open("hw.txt", "r") as f:
     month = details.group(2)
     month = int(re.sub(r"0(.)", r"\1", month));
     day = details.group(3)
-    day = int(re.sub(r"0(.)", r"\1", day));
-    day = 2
+    day = int(re.sub(r"0(.)", r"\1", day)) + 1;
     weekday = int(datetime.datetime.today().weekday())
-
-    day += 1
 
     i = 0;
 
