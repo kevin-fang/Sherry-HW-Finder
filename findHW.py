@@ -9,12 +9,10 @@ with open("hw.txt", "r") as f:
     month = int(re.sub(r"0(.)", r"\1", month));
     day = details.group(3)
     day = int(re.sub(r"0(.)", r"\1", day));
-    #weekday = int(datetime.datetime.today().weekday())
+    day = 2
+    weekday = int(datetime.datetime.today().weekday())
 
-    #if weekday == 5:
-    #    day += 2;
-    #elif weekday == 6:
-    #    day += 1;
+    day += 1
 
     i = 0;
 
