@@ -1,19 +1,22 @@
 #!/bin/bash/env python
 
-import re, datetime
-from sys import exit
+import re, datetime, sys
+
+extraValue = 0
+
+try:
+    extraValue = int(sys.argv[1])
+except:
+    pass
 
 with open("hw.txt", "r") as f:
-    buffer = f.read();
-    day = re.compile("\n(?=\w+)");
+    buffer = f.read()
+    day = re.compile("\n(?=\w+)")
     dayWork = day.split(buffer)[1:]
 
     today = datetime.date.today()
-    details = re.search(r'(.*?)-(.*?)-(.*)', str(today))
-    month = details.group(2)
-    month = int(re.sub(r"0(.)", r"\1", month));
-    day = details.group(3)
-    day = int(re.sub(r"0(.)", r"\1", day)) + 1;
+    month = today.month
+    day = today.day + 1 + extraValue
     weekday = int(datetime.datetime.today().weekday())
 
 for work in dayWork:
@@ -23,6 +26,6 @@ for work in dayWork:
         i += 1
         if formedDay.search(work):
             print work,
-            exit(1)
+            sys.exit(0)
 
 print("Incorrect Syllabus/No HW")
