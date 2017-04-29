@@ -21,7 +21,7 @@ with open("hw.txt", "r") as f:
     today = datetime.date.today()
     month = today.month
     day = today.day + 1 + extraValue
-    if (day > monthrange(today.year, today.month)[1]):
+    if (day >= monthrange(today.year, today.month)[1]):
         month += 1
         day = 1 + extraValue
     weekday = int(today.weekday())
