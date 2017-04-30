@@ -8,6 +8,5 @@ Note that you need to copy the contents of the current syllabus into `hw.txt`, o
 
 ---
 ### Features to be implemented in the future
-* Reading directly from .doc files? (this is almost impossible)
 * Automatic updating from drive? (next to impossible)
 * Specify location of hw.txt?
