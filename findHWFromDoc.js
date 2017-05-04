@@ -15,16 +15,23 @@ if (today >= daysInMonth(month, date.getYear())) {
   today = 1;
 }
 
-extracted.then((doc) => {
-  var text = doc.getBody();
+function extractAndPrint(text, month, today) {
+  if (today > 32) {
+    return false;
+  }
   var hwSearchRE = ".+" + month + "\/" + today + ".+\n(\t+.+)?"
   var re = new RegExp(hwSearchRE);
-
   var match = re.exec(text);
   if (match != null) {
     console.log(match[0].trim());
-  } else {
+    return true;
+  }
+  return extractAndPrint(text, month, today + 1);
+}
+
+extracted.then((doc) => {
+  var success = extractAndPrint(doc.getBody(), month, today);
+  if (!success) {
     console.log("Incorrect Syllabus/No HW");
   }
-
 });
