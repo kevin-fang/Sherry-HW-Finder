@@ -1,6 +1,6 @@
 # Sherry Homework Finder
 
-Given an input homework document in the `doc` format named `HW.doc` (NOT docx) in the root folder, run `node findHWFromDoc.js` on Windows or simply `./findHWFromDoc.js` on OS X/Linux and the program will output the next homework that is due. The NodeJS version is able to read directly from doc files, but the Python version is not.
+Run `npm i` to initialize. Given an input homework document in the `doc` format named `HW.doc` (NOT docx) in the root folder, run `node findHWFromDoc.js` on Windows or simply `./findHWFromDoc.js` on OS X/Linux and the program will output the next homework that is due. The NodeJS version is able to read directly from doc files, but the Python version is not.
 
 ## Python (deprecated)
 Given an input text file containing the homework for the current unit, run:  
